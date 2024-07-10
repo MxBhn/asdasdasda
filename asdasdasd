@@ -5,7 +5,7 @@ game.Players[targetPlayerName].Chatted:connect(function(cht)
     if cht:match(targetPhrase) then
         if game.Players.LocalPlayer ~= game.Players[targetPlayerName] then
             wait(0)
-            local A_1 = "ƒυçκ αλλ ŋïɠɠαš"
+            local A_1 = "balls"
             local A_2 = "All"
             local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
             Event:FireServer(A_1, A_2)
